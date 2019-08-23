@@ -3,9 +3,7 @@
 
 :inform_user
 @ ECHO OFF
-@ ECHO "This is a tool to assist searches for particular patterns in large sets of text files."
-@ ECHO "For now, the search strings are written in the script."
-@ ECHO "Furture version will take the search pattern in at run time."
+@ ECHO "This is a tool to assist searches for particular patterns in large sets of files."
 
 :time_stamp
 @ ECHO ON
@@ -24,12 +22,16 @@
 @ SET D=%D:~-4,4%%DELIMITER%%D:~-7,2%%DELIMITER%%D:~-10,2%
 
 @ ECHO %D%
-@ PAUSE
 
 :find_it
-::FINDSTR
+::search a code base:
+::FINDSTR /N 
+
+::search a log file vault:
+::FINDSTR /R
+
 @ PAUSE
 
 :dump_results_in_log
-::> C:\temp\BLAH_%T%_%D%.txt
+::> C:\temp\found <the droidsyou were looking for>_%T%_%D%.txt
 @ PAUSE
